@@ -15,7 +15,7 @@ export default function App(props) {
       {/* {console.log(state)} */}
       <header className='header'>
         <div>
-          <h1>Rick and Morty</h1>
+          <h1>South Park</h1>
           <p>Pick your favorite episodes</p>
         </div>
         <div>

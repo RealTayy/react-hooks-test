@@ -38,7 +38,7 @@ export default function HomePage() {
   // Action that makes API call for episode data
   const fetchDataAction = async () => {
     const data = await fetch(
-      'https://api.tvmaze.com/singlesearch/shows?q=rick-&-morty&embed=episodes'
+      'https://api.tvmaze.com/singlesearch/shows?q=south-park&embed=episodes'
     );
     const dataJSON = await data.json();
     return dispatch({
