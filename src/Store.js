@@ -8,15 +8,11 @@ const initialState = {
   favorites: [],
   users: [
     {
-      firstName: "Tay",
-      lastName: "Mai",
       username: "tay.mai@test.com",
       password: "asdf1234",
       favorites: []
     },
     {
-      firstName: "Tay",
-      lastName: "Mai",
       username: "tay.mai@test.com2",
       password: "asdf1234",
       favorites: []
@@ -58,9 +54,19 @@ function reducer(state, action) {
 
       return stateUpdate;
     }
-    case "LOG_OUT": return {...state, currentUser: ''};
-    default:
-      return state;
+    case "LOG_OUT": return { ...state, currentUser: '' };
+    case "CREATE_ACCOUNT": {
+      let stateUpdate = { ...state };
+      stateUpdate.users.push({
+        username: action.payload.username,
+        password: action.payload.password,
+        favorites: []
+      })
+
+      return stateUpdate;
+    }
+    default: return state;
+
   }
 }
 

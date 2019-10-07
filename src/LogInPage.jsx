@@ -31,13 +31,21 @@ export default function LogInPage() {
 
   // Create user handler
   const handleCreateUser = () => {
-
+    if (!username || !password) displayError()
+    const userIndex = state.users.findIndex(user => user.username === username);
+    // Check if user exist in fake DB
+    if (userIndex === -1) {
+      // Check if password is present. If correct then create account
+      dispatch({ type: "CREATE_ACCOUNT", payload: { username, password } });
+      return displayError("User created!", "green");
+    }
+    else displayError("Username already exist. Please choose different name");
   }
 
   // Function to display error messages
-  const displayError = (errorMessage) => {
+  const displayError = (errorMessage, color = "red") => {
     document.getElementById("log-in-header").textContent = errorMessage
-    document.getElementById("log-in-header").style.color = "red";
+    document.getElementById("log-in-header").style.color = color;
   }
 
   return (
