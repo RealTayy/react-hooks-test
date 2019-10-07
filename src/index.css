@@ -6,7 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 10px;
+  font-size: 12px;
 
 }
 
@@ -38,4 +38,17 @@ code {
 
 .header * {
   margin: 0;
+}
+
+.log-in-layout {
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group label {
+  display: block;
 }

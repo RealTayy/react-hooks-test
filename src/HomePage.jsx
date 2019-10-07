@@ -35,7 +35,7 @@ export default function HomePage() {
     }
   }
 
-  // Action that makes API call for episode data
+  // Action that makes API call for episode data and user data
   const fetchDataAction = async () => {
     const data = await fetch(
       'https://api.tvmaze.com/singlesearch/shows?q=south-park&embed=episodes'
